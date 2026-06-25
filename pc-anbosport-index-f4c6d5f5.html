@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安博体育 · 站点专题介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f4f5f7;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #1e2a3a;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 深色头图区 — 杂志式横幅 */
+        .hero {
+            background: linear-gradient(145deg, #0b1a2c 0%, #1f3044 100%);
+            padding: 3.5rem 2rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -10%;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(circle at 30% 50%, rgba(42, 130, 228, 0.06), transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #f0f4fa;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .sub {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            color: #b0c7de;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 浅色正文容器 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 1.8rem 4rem;
+            flex: 1;
+        }
+
+        /* 杂志式卡片段落 */
+        .section-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.2s;
+        }
+
+        .section-card:last-of-type {
+            margin-bottom: 2.8rem;
+        }
+
+        .section-card h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #eef2f6;
+            color: #1a2b3c;
+            letter-spacing: 0.3px;
+        }
+
+        .section-card p {
+            margin-bottom: 1.1rem;
+            font-size: 1rem;
+            color: #2a3a4c;
+        }
+
+        .section-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 强调色用于链接 */
+        a {
+            color: #1d6dad;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.15s, background 0.15s;
+            padding-bottom: 0.05em;
+            border-bottom: 1px dotted rgba(29, 109, 173, 0.25);
+        }
+
+        a:hover {
+            color: #0a3e66;
+            border-bottom-color: #0a3e66;
+        }
+
+        /* 页尾访问提示（非a标签，仅背景指引） */
+        .footer-note {
+            margin-top: 1rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #dce3ea;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #4a5b6c;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.6rem 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .footer-note span {
+            display: inline-block;
+            background: #eef3f8;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            color: #1f3a54;
+            font-size: 0.9rem;
+        }
+
+        .footer-note .arrow {
+            display: inline-block;
+            margin: 0 6px;
+            color: #67829c;
+        }
+
+        /* 小特性标签 */
+        .tagline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.2rem;
+            margin: 1.4rem 0 0.2rem;
+            font-size: 0.9rem;
+            color: #3e566b;
+        }
+
+        .tagline span {
+            background: #e9eef4;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-weight: 450;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 700px) {
+            .hero {
+                padding: 2.6rem 1.2rem 2.2rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 1.5rem 1rem 3rem;
+            }
+            .section-card {
+                padding: 1.5rem 1.3rem;
+            }
+            .section-card h2 {
+                font-size: 1.3rem;
+            }
+            .footer-note {
+                padding: 1.2rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .hero .sub {
+                font-size: 0.95rem;
+            }
+            .section-card p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 深色头图 / 杂志横幅 -->
+    <header class="hero">
+        <h1>安博体育 · 站点说明</h1>
+        <div class="sub">一份关于平台背景、内容定位与可信细节的专题介绍</div>
+    </header>
+
+    <main class="container">
+        <!-- 第一段：背景与站点由来 -->
+        <section class="section-card">
+            <h2>从信息整合到专业呈现</h2>
+            <p><a href="https://pc-anbosport.com">安博体育</a> 的建立初衷，是为关注体育资讯与互动内容的用户提供一个结构清晰的线上聚合点。不同于单一赛事追踪类站点，它在栏目设计上更强调信息组织与阅读体验的平衡——将实时动态、背景分析和社区交流板块做了明确区分，方便不同需求的访客快速定位。</p>
+            <p>整个站点的内容选编遵循基本的真实性原则，参考多方信源进行整合，并在页面上标注出处或时间戳，帮助读者自行判断。这种偏重信息透明度的做法，在同类站点中并不常见，也是我们持续坚持的方向。</p>
+        </section>
+
+        <!-- 第二段：内容模块与使用场景 -->
+        <section class="section-card">
+            <h2>栏目构成与日常场景</h2>
+            <p>目前平台主要围绕赛事资讯、趋势解读和用户讨论三个方向展开。资讯板块覆盖主流联赛及重点赛事的前瞻与回顾，同时设有专栏区域，用于发布偏分析向的长文。讨论区则采用分类话题的形式，鼓励理性交流，并由管理员定期梳理精华内容。</p>
+            <p>对于习惯在电脑端浏览的用户，<a href="https://pc-anbosport.com">安博体育</a> 的页面布局针对宽屏做了适配，减少多级跳转，让信息层级更直观。移动端同样保持基础可用性，但若想获得完整的阅读体验，建议在平板或笔记本上打开。</p>
+            <div class="tagline">
+                <span>⚽ 赛事前瞻</span>
+                <span>📊 趋势分析</span>
+                <span>💬 社区讨论</span>
+                <span>📁 专栏文章</span>
+            </div>
+        </section>
+
+        <!-- 第三段：可信说明与 FAQ 摘要 -->
+        <section class="section-card">
+            <h2>可信度与常见疑问</h2>
+            <p>站点本身不生产原始赛果数据，所有比分、赛程及统计信息均来自公开数据接口或合作方提供，并在页面显著位置注明来源。同时，编审团队会对用户投稿及社区发言进行基础审核，避免传播不实信息或恶意内容。</p>
+            <p style="margin-top: 1.2rem;"><strong>常见疑问摘要</strong></p>
+            <p>• 信息更新频率如何？—— 重点赛事时段基本做到实时或准实时推送，非高峰期每日多次更新。</p>
+            <p>• 是否需要注册才能阅读？—— 浏览资讯和专栏无需登录，参与讨论或收藏功能需注册账号。</p>
+            <p>• 内容是否支持转载？—— 转载需标明原文链接及作者，商业使用请先联系站点。</p>
+            <p style="margin-top: 1rem;">如果你对某个栏目或具体文章有进一步疑问，可以在对应页面找到反馈入口。关于更详细的使用方法，可以浏览 <a href="https://pc-anbosport.com">安博体育</a> 的帮助专区，那里有逐步引导。</p>
+        </section>
+
+        <!-- 页尾访问提示（非链接，仅提示性文字） -->
+        <div class="footer-note">
+            <span>📌 提示</span>
+            <span class="arrow">→</span>
+            本页面为站点介绍页，完整内容及所有功能模块均托管在主站域名之下。
+        </div>
+    </main>
+
+    <!-- 可选的极简脚标，不干扰内容 -->
+    <footer style="text-align: center; padding: 0.8rem 1rem 1.5rem; font-size: 0.8rem; color: #7a8b9e; background: transparent;">
+        — 专题说明 · 内容定期复核 —
+    </footer>
+</body>
+</html>
